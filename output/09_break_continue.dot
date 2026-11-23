@@ -1,0 +1,32 @@
+digraph loopControl {
+  rankdir=TB;
+  node [fontname="Helvetica"];
+  START [shape=Mdiamond, style=filled, fillcolor="#e8f5e9"];
+  STOP  [shape=Msquare,  style=filled, fillcolor="#ffebee"];
+  B1 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B1\nint s = 0;\nint i = 0;"];
+  B2 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B2\ni < n"];
+  B3 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B3\ni = i + 1;\ni == 2"];
+  B4 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B4\ni == 8"];
+  B5 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B5\ns = s + i;"];
+  B6 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B6\nint j = 0;"];
+  B7 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B7\nj < n"];
+  B8 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B8\nj == 3"];
+  B9 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B9\ns = s + j;\nj = j + 1;"];
+  B10 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B10\nwrite(s);"];
+  START -> B1;
+  B1 -> B2;
+  B2 -> B3 [label="true", color="#2e7d32"];
+  B2 -> B6 [label="false", color="#c62828"];
+  B3 -> B2 [label="true", color="#2e7d32"];
+  B3 -> B4 [label="false", color="#c62828"];
+  B4 -> B6 [label="true", color="#2e7d32"];
+  B4 -> B5 [label="false", color="#c62828"];
+  B5 -> B2;
+  B6 -> B7;
+  B7 -> B8 [label="true", color="#2e7d32"];
+  B7 -> B10 [label="false", color="#c62828"];
+  B8 -> B10 [label="true", color="#2e7d32"];
+  B8 -> B9 [label="false", color="#c62828"];
+  B9 -> B7;
+  B10 -> STOP;
+}

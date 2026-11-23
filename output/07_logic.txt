@@ -1,0 +1,21 @@
+Function: logic
+Cyclomatic complexity V(G) = E - N + 2 = 7 - 6 + 2 = 3
+
+Vertices:
+  START
+  1:
+      boolean flag = a > 0 && b < 10;
+      flag
+  2: write(a);
+  3: a > 0 || b > 0
+  4: write(b);
+  STOP
+
+Edges:
+  START -> 1
+  1 -> 2  [true]
+  1 -> 3  [false]
+  2 -> 3
+  3 -> 4  [true]
+  3 -> STOP  [false]
+  4 -> STOP

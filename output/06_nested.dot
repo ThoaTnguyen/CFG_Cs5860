@@ -1,0 +1,38 @@
+digraph nested {
+  rankdir=TB;
+  node [fontname="Helvetica"];
+  START [shape=Mdiamond, style=filled, fillcolor="#e8f5e9"];
+  STOP  [shape=Msquare,  style=filled, fillcolor="#ffebee"];
+  B1 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B1\nint s = 0;\nboolean ok = n > 0 && n < 1000;\nok"];
+  B2 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B2\nint i = 0;"];
+  B3 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B3\ni < n"];
+  B4 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B4\nint j = 0;"];
+  B5 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B5\nj < i"];
+  B6 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B6\nj % 2 == 0"];
+  B7 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B7\ns = s + j;"];
+  B8 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B8\ns = s - 1;"];
+  B9 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B9\nj = j + 1;"];
+  B10 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B10\ni = i + 1;"];
+  B11 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B11\ni % 3 == 0"];
+  B12 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B12\nread(s);"];
+  B13 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B13\nwrite(s);"];
+  START -> B1;
+  B1 -> B2 [label="true", color="#2e7d32"];
+  B1 -> B12 [label="false", color="#c62828"];
+  B2 -> B3;
+  B3 -> B4 [label="true", color="#2e7d32"];
+  B3 -> B13 [label="false", color="#c62828"];
+  B4 -> B5;
+  B5 -> B6 [label="true", color="#2e7d32"];
+  B5 -> B10 [label="false", color="#c62828"];
+  B6 -> B7 [label="true", color="#2e7d32"];
+  B6 -> B8 [label="false", color="#c62828"];
+  B7 -> B9;
+  B8 -> B9;
+  B9 -> B5;
+  B10 -> B11;
+  B11 -> B10 [label="true", color="#2e7d32"];
+  B11 -> B3 [label="false", color="#c62828"];
+  B12 -> B13;
+  B13 -> STOP;
+}

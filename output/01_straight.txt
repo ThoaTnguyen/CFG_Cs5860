@@ -1,0 +1,17 @@
+Function: straight
+Cyclomatic complexity V(G) = E - N + 2 = 2 - 3 + 2 = 1
+
+Vertices:
+  START
+  1:
+      int a = 1;
+      int b = a + 2 * 3;
+      int c = 0;
+      read(c);
+      write(b);
+      c = b - a;
+  STOP
+
+Edges:
+  START -> 1
+  1 -> STOP

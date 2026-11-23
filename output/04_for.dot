@@ -1,0 +1,23 @@
+digraph fors {
+  rankdir=TB;
+  node [fontname="Helvetica"];
+  START [shape=Mdiamond, style=filled, fillcolor="#e8f5e9"];
+  STOP  [shape=Msquare,  style=filled, fillcolor="#ffebee"];
+  B1 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B1\nint s = 0;\nint i = 0;"];
+  B2 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B2\ni < n && s >= 0"];
+  B3 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B3\nint j = 0;"];
+  B4 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B4\nj < i"];
+  B5 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B5\ns = s + i * j;\nj = j + 1;"];
+  B6 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B6\ni = i + 1;"];
+  B7 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B7\nwrite(s);"];
+  START -> B1;
+  B1 -> B2;
+  B2 -> B3 [label="true", color="#2e7d32"];
+  B2 -> B7 [label="false", color="#c62828"];
+  B3 -> B4;
+  B4 -> B5 [label="true", color="#2e7d32"];
+  B4 -> B6 [label="false", color="#c62828"];
+  B5 -> B4;
+  B6 -> B2;
+  B7 -> STOP;
+}

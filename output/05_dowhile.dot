@@ -1,0 +1,16 @@
+digraph dowhile {
+  rankdir=TB;
+  node [fontname="Helvetica"];
+  START [shape=Mdiamond, style=filled, fillcolor="#e8f5e9"];
+  STOP  [shape=Msquare,  style=filled, fillcolor="#ffebee"];
+  B1 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B1\nint s = 0;\nint i = 0;"];
+  B2 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B2\ns = s + i;\ni = i + 1;"];
+  B3 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B3\ni < n"];
+  B4 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B4\nwrite(s);"];
+  START -> B1;
+  B1 -> B2;
+  B2 -> B3;
+  B3 -> B2 [label="true", color="#2e7d32"];
+  B3 -> B4 [label="false", color="#c62828"];
+  B4 -> STOP;
+}

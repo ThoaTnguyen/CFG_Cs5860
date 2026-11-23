@@ -1,0 +1,29 @@
+Function: fors
+Cyclomatic complexity V(G) = E - N + 2 = 10 - 9 + 2 = 3
+
+Vertices:
+  START
+  1:
+      int s = 0;
+      int i = 0;
+  2: i < n && s >= 0
+  3: int j = 0;
+  4: j < i
+  5:
+      s = s + i * j;
+      j = j + 1;
+  6: i = i + 1;
+  7: write(s);
+  STOP
+
+Edges:
+  START -> 1
+  1 -> 2
+  2 -> 3  [true]
+  2 -> 7  [false]
+  3 -> 4
+  4 -> 5  [true]
+  4 -> 6  [false]
+  5 -> 4
+  6 -> 2
+  7 -> STOP

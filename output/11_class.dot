@@ -1,0 +1,16 @@
+digraph main {
+  rankdir=TB;
+  node [fontname="Helvetica"];
+  START [shape=Mdiamond, style=filled, fillcolor="#e8f5e9"];
+  STOP  [shape=Msquare,  style=filled, fillcolor="#ffebee"];
+  B1 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B1\nint s = 0;\nint i = 0;"];
+  B2 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B2\ni < n"];
+  B3 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B3\ns += i;\ni++;"];
+  B4 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B4\nwrite(s);\nreturn;"];
+  START -> B1;
+  B1 -> B2;
+  B2 -> B3 [label="true", color="#2e7d32"];
+  B2 -> B4 [label="false", color="#c62828"];
+  B3 -> B2;
+  B4 -> STOP;
+}

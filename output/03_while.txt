@@ -1,0 +1,27 @@
+Function: whiles
+Cyclomatic complexity V(G) = E - N + 2 = 9 - 8 + 2 = 3
+
+Vertices:
+  START
+  1:
+      int s = 0;
+      int i = 0;
+  2: i < n && s >= 0
+  3:
+      s = s + i;
+      i = i + 1;
+  4: s > 100
+  5: s = s - 10;
+  6: write(s);
+  STOP
+
+Edges:
+  START -> 1
+  1 -> 2
+  2 -> 3  [true]
+  2 -> 6  [false]
+  3 -> 4
+  4 -> 5  [true]
+  4 -> 2  [false]
+  5 -> 4
+  6 -> STOP

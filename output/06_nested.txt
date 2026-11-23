@@ -1,0 +1,43 @@
+Function: nested
+Cyclomatic complexity V(G) = E - N + 2 = 19 - 15 + 2 = 6
+
+Vertices:
+  START
+  1:
+      int s = 0;
+      boolean ok = n > 0 && n < 1000;
+      ok
+  2: int i = 0;
+  3: i < n
+  4: int j = 0;
+  5: j < i
+  6: j % 2 == 0
+  7: s = s + j;
+  8: s = s - 1;
+  9: j = j + 1;
+  10: i = i + 1;
+  11: i % 3 == 0
+  12: read(s);
+  13: write(s);
+  STOP
+
+Edges:
+  START -> 1
+  1 -> 2  [true]
+  1 -> 12  [false]
+  2 -> 3
+  3 -> 4  [true]
+  3 -> 13  [false]
+  4 -> 5
+  5 -> 6  [true]
+  5 -> 10  [false]
+  6 -> 7  [true]
+  6 -> 8  [false]
+  7 -> 9
+  8 -> 9
+  9 -> 5
+  10 -> 11
+  11 -> 10  [true]
+  11 -> 3  [false]
+  12 -> 13
+  13 -> STOP

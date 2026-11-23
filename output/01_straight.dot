@@ -1,0 +1,9 @@
+digraph straight {
+  rankdir=TB;
+  node [fontname="Helvetica"];
+  START [shape=Mdiamond, style=filled, fillcolor="#e8f5e9"];
+  STOP  [shape=Msquare,  style=filled, fillcolor="#ffebee"];
+  B1 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B1\nint a = 1;\nint b = a + 2 * 3;\nint c = 0;\nread(c);\nwrite(b);\nc = b - a;"];
+  START -> B1;
+  B1 -> STOP;
+}

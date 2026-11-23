@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CFG extras</title></head><body><h1>extras</h1><p>Reduced CFG. V(G) = 3.</p><div><svg xmlns="http://www.w3.org/2000/svg" width="400" height="880" viewBox="0 0 400 880">
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+<path d="M0,0 L10,4 L0,8 z" fill="#333"/></marker></defs>
+<rect width="100%" height="100%" fill="#fafafa"/>
+<path d="M 200 122 L 200 197" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 200 263 L 90 338" fill="none" stroke="#2e7d32" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="153" y="300" font-size="11" fill="#2e7d32">true</text>
+<path d="M 200 263 L 310 338" fill="none" stroke="#c62828" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="263" y="300" font-size="11" fill="#c62828">false</text>
+<path d="M 90 402 L 200 461" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 310 402 L 200 461" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 200 559 L 200 618" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 200 682 L 90 758" fill="none" stroke="#2e7d32" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="153" y="720" font-size="11" fill="#2e7d32">true</text>
+<path d="M 200 682 L 310 758" fill="none" stroke="#c62828" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="263" y="720" font-size="11" fill="#c62828">false</text>
+<path d="M 90 822 C 290 822, 290 618, 200 618" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<polygon points="200,58 300,90 200,122 100,90" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="200" y="94" text-anchor="middle" font-size="14" font-weight="bold">START</text>
+<polygon points="200,197 300,230 200,263 100,230" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+<text x="200" y="216" text-anchor="middle" font-size="11" font-weight="bold">1</text>
+<text x="200" y="230" text-anchor="middle" font-size="11" font-weight="normal">int x = 0;</text>
+<text x="200" y="244" text-anchor="middle" font-size="11" font-weight="normal">n &gt; 0</text>
+<rect x="-10" y="338" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="90" y="363" text-anchor="middle" font-size="11" font-weight="bold">2</text>
+<text x="90" y="377" text-anchor="middle" font-size="11" font-weight="normal">x = n;</text>
+<rect x="210" y="338" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="310" y="363" text-anchor="middle" font-size="11" font-weight="bold">3</text>
+<text x="310" y="377" text-anchor="middle" font-size="11" font-weight="normal">x = -n;</text>
+<rect x="100" y="461" width="200" height="98" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="200" y="482" text-anchor="middle" font-size="11" font-weight="bold">4</text>
+<text x="200" y="496" text-anchor="middle" font-size="11" font-weight="normal">x ++;</text>
+<text x="200" y="510" text-anchor="middle" font-size="11" font-weight="normal">-- x;</text>
+<text x="200" y="524" text-anchor="middle" font-size="11" font-weight="normal">foo(x);</text>
+<text x="200" y="538" text-anchor="middle" font-size="11" font-weight="normal">bar(x + 1, n);</text>
+<polygon points="200,618 300,650 200,682 100,650" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+<text x="200" y="643" text-anchor="middle" font-size="11" font-weight="bold">5</text>
+<text x="200" y="657" text-anchor="middle" font-size="11" font-weight="normal">for (int v : arr)</text>
+<rect x="-10" y="758" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="90" y="783" text-anchor="middle" font-size="11" font-weight="bold">6</text>
+<text x="90" y="797" text-anchor="middle" font-size="11" font-weight="normal">write(v);</text>
+<rect x="210" y="758" width="200" height="64" rx="4" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+<text x="310" y="794" text-anchor="middle" font-size="14" font-weight="bold">STOP</text>
+</svg></div><pre>Function: extras
+Cyclomatic complexity V(G) = E - N + 2 = 9 - 8 + 2 = 3
+
+Vertices:
+  START
+  1:
+      int x = 0;
+      n &gt; 0
+  2: x = n;
+  3: x = -n;
+  4:
+      x ++;
+      -- x;
+      foo(x);
+      bar(x + 1, n);
+  5: for (int v : arr)
+  6: write(v);
+  STOP
+
+Edges:
+  START -&gt; 1
+  1 -&gt; 2  [true]
+  1 -&gt; 3  [false]
+  2 -&gt; 4
+  3 -&gt; 4
+  4 -&gt; 5
+  5 -&gt; 6  [true]
+  5 -&gt; STOP  [false]
+  6 -&gt; 5
+</pre></body></html>

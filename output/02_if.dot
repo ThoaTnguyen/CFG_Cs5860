@@ -1,0 +1,31 @@
+digraph ifs {
+  rankdir=TB;
+  node [fontname="Helvetica"];
+  START [shape=Mdiamond, style=filled, fillcolor="#e8f5e9"];
+  STOP  [shape=Msquare,  style=filled, fillcolor="#ffebee"];
+  B1 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B1\nint a = 0;\nx > 0"];
+  B2 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B2\na = 1;"];
+  B3 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B3\nx > 0 && y < 10"];
+  B4 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B4\na = 2;"];
+  B5 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B5\na = 3;"];
+  B6 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B6\nx > 0"];
+  B7 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B7\ny > 0"];
+  B8 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B8\na = 4;"];
+  B9 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B9\na = 5;"];
+  B10 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B10\nwrite(a);"];
+  START -> B1;
+  B1 -> B2 [label="true", color="#2e7d32"];
+  B1 -> B3 [label="false", color="#c62828"];
+  B2 -> B3;
+  B3 -> B4 [label="true", color="#2e7d32"];
+  B3 -> B5 [label="false", color="#c62828"];
+  B4 -> B6;
+  B5 -> B6;
+  B6 -> B7 [label="true", color="#2e7d32"];
+  B6 -> B10 [label="false", color="#c62828"];
+  B7 -> B8 [label="true", color="#2e7d32"];
+  B7 -> B9 [label="false", color="#c62828"];
+  B8 -> B10;
+  B9 -> B10;
+  B10 -> STOP;
+}

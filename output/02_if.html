@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CFG ifs</title></head><body><h1>ifs</h1><p>Reduced CFG. V(G) = 5.</p><div><svg xmlns="http://www.w3.org/2000/svg" width="620" height="1160" viewBox="0 0 620 1160">
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+<path d="M0,0 L10,4 L0,8 z" fill="#333"/></marker></defs>
+<rect width="100%" height="100%" fill="#fafafa"/>
+<path d="M 310 122 L 310 197" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 310 263 L 310 338" fill="none" stroke="#2e7d32" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="318" y="300" font-size="11" fill="#2e7d32">true</text>
+<path d="M 310 263 L 310 478" fill="none" stroke="#c62828" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="318" y="370" font-size="11" fill="#c62828">false</text>
+<path d="M 310 402 L 310 478" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 310 542 L 200 618" fill="none" stroke="#2e7d32" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="263" y="580" font-size="11" fill="#2e7d32">true</text>
+<path d="M 310 542 L 420 618" fill="none" stroke="#c62828" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="373" y="580" font-size="11" fill="#c62828">false</text>
+<path d="M 200 682 L 310 758" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 420 682 L 310 758" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 310 822 L 200 898" fill="none" stroke="#2e7d32" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="263" y="860" font-size="11" fill="#2e7d32">true</text>
+<path d="M 310 822 L 420 898" fill="none" stroke="#c62828" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="373" y="860" font-size="11" fill="#c62828">false</text>
+<path d="M 200 962 L 90 1038" fill="none" stroke="#2e7d32" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="153" y="1000" font-size="11" fill="#2e7d32">true</text>
+<path d="M 200 962 L 310 1038" fill="none" stroke="#c62828" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="263" y="1000" font-size="11" fill="#c62828">false</text>
+<path d="M 90 1102 C 510 1102, 510 898, 420 898" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 310 1102 C 510 1102, 510 898, 420 898" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 420 962 L 530 1038" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<polygon points="310,58 410,90 310,122 210,90" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="310" y="94" text-anchor="middle" font-size="14" font-weight="bold">START</text>
+<polygon points="310,197 410,230 310,263 210,230" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+<text x="310" y="216" text-anchor="middle" font-size="11" font-weight="bold">1</text>
+<text x="310" y="230" text-anchor="middle" font-size="11" font-weight="normal">int a = 0;</text>
+<text x="310" y="244" text-anchor="middle" font-size="11" font-weight="normal">x &gt; 0</text>
+<rect x="210" y="338" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="310" y="363" text-anchor="middle" font-size="11" font-weight="bold">2</text>
+<text x="310" y="377" text-anchor="middle" font-size="11" font-weight="normal">a = 1;</text>
+<polygon points="310,478 410,510 310,542 210,510" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+<text x="310" y="503" text-anchor="middle" font-size="11" font-weight="bold">3</text>
+<text x="310" y="517" text-anchor="middle" font-size="11" font-weight="normal">x &gt; 0 &amp;&amp; y &lt; 10</text>
+<rect x="100" y="618" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="200" y="643" text-anchor="middle" font-size="11" font-weight="bold">4</text>
+<text x="200" y="657" text-anchor="middle" font-size="11" font-weight="normal">a = 2;</text>
+<rect x="320" y="618" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="420" y="643" text-anchor="middle" font-size="11" font-weight="bold">5</text>
+<text x="420" y="657" text-anchor="middle" font-size="11" font-weight="normal">a = 3;</text>
+<polygon points="310,758 410,790 310,822 210,790" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+<text x="310" y="783" text-anchor="middle" font-size="11" font-weight="bold">6</text>
+<text x="310" y="797" text-anchor="middle" font-size="11" font-weight="normal">x &gt; 0</text>
+<polygon points="200,898 300,930 200,962 100,930" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+<text x="200" y="923" text-anchor="middle" font-size="11" font-weight="bold">7</text>
+<text x="200" y="937" text-anchor="middle" font-size="11" font-weight="normal">y &gt; 0</text>
+<rect x="-10" y="1038" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="90" y="1063" text-anchor="middle" font-size="11" font-weight="bold">8</text>
+<text x="90" y="1077" text-anchor="middle" font-size="11" font-weight="normal">a = 4;</text>
+<rect x="210" y="1038" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="310" y="1063" text-anchor="middle" font-size="11" font-weight="bold">9</text>
+<text x="310" y="1077" text-anchor="middle" font-size="11" font-weight="normal">a = 5;</text>
+<rect x="320" y="898" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="420" y="923" text-anchor="middle" font-size="11" font-weight="bold">10</text>
+<text x="420" y="937" text-anchor="middle" font-size="11" font-weight="normal">write(a);</text>
+<rect x="430" y="1038" width="200" height="64" rx="4" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+<text x="530" y="1074" text-anchor="middle" font-size="14" font-weight="bold">STOP</text>
+</svg></div><pre>Function: ifs
+Cyclomatic complexity V(G) = E - N + 2 = 15 - 12 + 2 = 5
+
+Vertices:
+  START
+  1:
+      int a = 0;
+      x &gt; 0
+  2: a = 1;
+  3: x &gt; 0 &amp;&amp; y &lt; 10
+  4: a = 2;
+  5: a = 3;
+  6: x &gt; 0
+  7: y &gt; 0
+  8: a = 4;
+  9: a = 5;
+  10: write(a);
+  STOP
+
+Edges:
+  START -&gt; 1
+  1 -&gt; 2  [true]
+  1 -&gt; 3  [false]
+  2 -&gt; 3
+  3 -&gt; 4  [true]
+  3 -&gt; 5  [false]
+  4 -&gt; 6
+  5 -&gt; 6
+  6 -&gt; 7  [true]
+  6 -&gt; 10  [false]
+  7 -&gt; 8  [true]
+  7 -&gt; 9  [false]
+  8 -&gt; 10
+  9 -&gt; 10
+  10 -&gt; STOP
+</pre></body></html>

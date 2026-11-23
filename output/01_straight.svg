@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="460" viewBox="0 0 180 460" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+<path d="M0,0 L10,4 L0,8 z" fill="#333"/>
+</marker>
+</defs>
+<rect width="100%" height="100%" fill="#fafafa"/>
+<path d="M 90.0 122.0 L 90.0 173.0" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 90.0 287.0 L 90.0 338.0" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<polygon points="90.0,58.0 190.0,90.0 90.0,122.0 -10.0,90.0" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="90.0" y="94.0" text-anchor="middle" font-size="14" font-weight="bold">START</text>
+<rect x="-10.0" y="173.0" width="200.0" height="114.0" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="90.0" y="195.0" text-anchor="middle" font-size="10" font-weight="bold">B1</text>
+<text x="90.0" y="209.0" text-anchor="middle" font-size="10" font-weight="normal">int a = 1;</text>
+<text x="90.0" y="223.0" text-anchor="middle" font-size="10" font-weight="normal">int b = a + 2 * 3;</text>
+<text x="90.0" y="237.0" text-anchor="middle" font-size="10" font-weight="normal">int c = 0;</text>
+<text x="90.0" y="251.0" text-anchor="middle" font-size="10" font-weight="normal">read(c);</text>
+<text x="90.0" y="265.0" text-anchor="middle" font-size="10" font-weight="normal">…</text>
+<rect x="-10.0" y="338.0" width="200.0" height="64.0" rx="4" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+<text x="90.0" y="374.0" text-anchor="middle" font-size="14" font-weight="bold">STOP</text>
+</svg>

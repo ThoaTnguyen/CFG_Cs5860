@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CFG classify</title></head><body><h1>classify</h1><p>Reduced CFG. V(G) = 5.</p><div><svg xmlns="http://www.w3.org/2000/svg" width="620" height="740" viewBox="0 0 620 740">
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+<path d="M0,0 L10,4 L0,8 z" fill="#333"/></marker></defs>
+<rect width="100%" height="100%" fill="#fafafa"/>
+<path d="M 310 122 L 310 197" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 310 263 L 90 338" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="208" y="300" font-size="11" fill="#333">case 0</text>
+<path d="M 310 263 L 310 338" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="318" y="300" font-size="11" fill="#333">case 1</text>
+<path d="M 310 263 L 310 338" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="318" y="300" font-size="11" fill="#333">case 2</text>
+<path d="M 310 263 L 530 338" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="428" y="300" font-size="11" fill="#333">case 3</text>
+<path d="M 310 263 L 200 477" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="263" y="370" font-size="11" fill="#333">default</text>
+<path d="M 90 402 L 420 477" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 310 402 L 420 477" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 530 402 L 200 477" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 200 543 L 310 618" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M 420 543 L 310 618" fill="none" stroke="#333" stroke-width="1.6" marker-end="url(#arrow)"/>
+<polygon points="310,58 410,90 310,122 210,90" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="310" y="94" text-anchor="middle" font-size="14" font-weight="bold">START</text>
+<polygon points="310,197 410,230 310,263 210,230" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+<text x="310" y="216" text-anchor="middle" font-size="11" font-weight="bold">1</text>
+<text x="310" y="230" text-anchor="middle" font-size="11" font-weight="normal">int kind = 0;</text>
+<text x="310" y="244" text-anchor="middle" font-size="11" font-weight="normal">switch (x)</text>
+<rect x="-10" y="338" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="90" y="363" text-anchor="middle" font-size="11" font-weight="bold">2</text>
+<text x="90" y="377" text-anchor="middle" font-size="11" font-weight="normal">kind = 0;</text>
+<rect x="210" y="338" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="310" y="363" text-anchor="middle" font-size="11" font-weight="bold">3</text>
+<text x="310" y="377" text-anchor="middle" font-size="11" font-weight="normal">kind = 1;</text>
+<rect x="430" y="338" width="200" height="64" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="530" y="363" text-anchor="middle" font-size="11" font-weight="bold">4</text>
+<text x="530" y="377" text-anchor="middle" font-size="11" font-weight="normal">kind = 2;</text>
+<rect x="100" y="477" width="200" height="66" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="200" y="496" text-anchor="middle" font-size="11" font-weight="bold">5</text>
+<text x="200" y="510" text-anchor="middle" font-size="11" font-weight="normal">kind = kind + 10;</text>
+<text x="200" y="524" text-anchor="middle" font-size="11" font-weight="normal">return kind;</text>
+<rect x="320" y="477" width="200" height="66" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="420" y="496" text-anchor="middle" font-size="11" font-weight="bold">6</text>
+<text x="420" y="510" text-anchor="middle" font-size="11" font-weight="normal">write(kind);</text>
+<text x="420" y="524" text-anchor="middle" font-size="11" font-weight="normal">exit(0);</text>
+<rect x="210" y="618" width="200" height="64" rx="4" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+<text x="310" y="654" text-anchor="middle" font-size="14" font-weight="bold">STOP</text>
+</svg></div><pre>Function: classify
+Cyclomatic complexity V(G) = E - N + 2 = 11 - 8 + 2 = 5
+
+Vertices:
+  START
+  1:
+      int kind = 0;
+      switch (x)
+  2: kind = 0;
+  3: kind = 1;
+  4: kind = 2;
+  5:
+      kind = kind + 10;
+      return kind;
+  6:
+      write(kind);
+      exit(0);
+  STOP
+
+Edges:
+  START -&gt; 1
+  1 -&gt; 2  [case 0]
+  1 -&gt; 3  [case 1]
+  1 -&gt; 3  [case 2]
+  1 -&gt; 4  [case 3]
+  1 -&gt; 5  [default]
+  2 -&gt; 6
+  3 -&gt; 6
+  4 -&gt; 5
+  5 -&gt; STOP
+  6 -&gt; STOP
+</pre></body></html>

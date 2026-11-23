@@ -1,0 +1,23 @@
+digraph classify {
+  rankdir=TB;
+  node [fontname="Helvetica"];
+  START [shape=Mdiamond, style=filled, fillcolor="#e8f5e9"];
+  STOP  [shape=Msquare,  style=filled, fillcolor="#ffebee"];
+  B1 [shape=diamond, style="filled,rounded", fillcolor="#fff8e1", label="B1\nint kind = 0;\nswitch (x)"];
+  B2 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B2\nkind = 0;"];
+  B3 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B3\nkind = 1;"];
+  B4 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B4\nkind = 2;"];
+  B5 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B5\nkind = kind + 10;\nreturn kind;"];
+  B6 [shape=box, style="filled,rounded", fillcolor="#e3f2fd", label="B6\nwrite(kind);\nexit(0);"];
+  START -> B1;
+  B1 -> B2 [label="case 0"];
+  B1 -> B3 [label="case 1"];
+  B1 -> B3 [label="case 2"];
+  B1 -> B4 [label="case 3"];
+  B1 -> B5 [label="default"];
+  B2 -> B6;
+  B3 -> B6;
+  B4 -> B5;
+  B5 -> STOP;
+  B6 -> STOP;
+}
